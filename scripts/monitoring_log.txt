@@ -1,0 +1,2 @@
+CPU usage is high: 100%
+Disk usage is high: 58%
