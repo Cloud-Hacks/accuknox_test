@@ -7,7 +7,7 @@ on:
       - development
 
 jobs:
-  build:
+  build_and_push_image:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +42,7 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-  deploy:
+  deploy_to_kubernetes:
     needs: build_and_push_image
     runs-on: ubuntu-latest
 
