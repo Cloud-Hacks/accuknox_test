@@ -1,0 +1,19 @@
+# Add any configurable values for your application here
+app:
+  name: wisecow-app
+replicaCount: 2
+image:
+  repository: afzal442/wisecow-app
+  tag: main
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: "wisecow.app.co"
+      paths: ["/"]
+  tlsSecretName: tls-secret
